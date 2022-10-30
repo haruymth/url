@@ -2,7 +2,7 @@
 <div id="iframe"></div>
 <script>  
   const url = prompt("閲覧したいページのURLを入力");
-  document.getElementById("iframe").innerHTML = `<iframe src=\"${url}\" width=\"100%\" height=\"100%\"></iframe>`;
+  fetch(url).then(respose=>response.text()).then(html=>{document.getElementById("iframe").innerHTML=html;});
 </script>
 <style>
 iframe {border:  none;}
